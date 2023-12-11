@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 export default function ApplicationNav() {
   return (
@@ -13,8 +14,8 @@ export default function ApplicationNav() {
 </svg></Navbar.Brand>
       <Nav className="me-auto">
         <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="http://localhost:3000">Registration</Nav.Link>
-        <Nav.Link href="http://localhost:3000/logIn">LogIn</Nav.Link>
+        <Nav.Link as={Link}to="/">Registration</Nav.Link>
+        <Nav.Link as={Link}to="/LogIn">LogIn</Nav.Link>
       </Nav>
     </Container>
   </Navbar>
