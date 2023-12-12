@@ -13,7 +13,7 @@ export default function ApplicationNav() {
   <path d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"/>
 </svg></Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link as={Link}to="/Home">Home</Nav.Link>
         <Nav.Link as={Link}to="/">Registration</Nav.Link>
         <Nav.Link as={Link}to="/LogIn">LogIn</Nav.Link>
       </Nav>

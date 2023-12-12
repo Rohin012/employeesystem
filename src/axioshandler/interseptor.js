@@ -23,7 +23,7 @@ authFetch.interceptors.response.use((response)=>{
 
    if(response.status == 200)
    {
-
+      
 
     toast.success(`${response.data.message}`,{
 
@@ -52,9 +52,10 @@ authFetch.interceptors.response.use((response)=>{
       progress: 0,
     })
    }
+   return response;
     
 },(error)=>{
-    if(error.response.status === 400)
+    if(error?.response?.status === 400)
     {
  
  

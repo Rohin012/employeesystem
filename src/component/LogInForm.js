@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import authFetch from '../axioshandler/interseptor';
+import { useNavigate } from 'react-router-dom';
 
 export default function LogInForm() {
+
+        const navi = useNavigate();
 
         const [form,setForm]=useState({
           email:"",
@@ -25,6 +28,8 @@ export default function LogInForm() {
 
             localStorage.setItem("token",JSON.stringify(y.data))
             console.log(y.data);
+
+            navi("/Home")
         }).catch(y=>{
 
             console.log(y)
