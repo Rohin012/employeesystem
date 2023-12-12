@@ -1,48 +1,18 @@
-import React,{useEffect,useState} from 'react';
-import authFetch from '../axioshandler/interseptor';
+import React from 'react'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/esm/Col'; 
+import Display from '../component/Display';
 
 const Home = () => {
-    const [data,setData]= useState([]);
-
-    // let d = JSON.parse(localStorage.getItem("token"));
-
-    useEffect(()=>{
-
-      authFetch.get("/accounts").then(y=> {
-        
-            setData(y.data)
-        }).catch(u=>{
-
-            console.log(u);
-        })
-
-    },[])
   return (
-    <table>
-        <tbody>{
-        
-            data.map((v)=>{
-
-
-                return(<tr>
-                    <td>{v.title}</td>
-                    <td>{v.firstName}</td>
-                    <td>{v.lastName}</td>
-                    <td>{v.email}</td>
-                    <td>{v.password}</td>
-                    <td>{v.Confirmpassword}</td>
-                    
-                    </tr>)
-
-            })
-        
-        }
-        
-        </tbody>
-        </table>
-
-  
+    <Row>
+    <Col>
+    <Display/>
+    </Col>
+    </Row>
   )
 }
 
 export default Home
+
+

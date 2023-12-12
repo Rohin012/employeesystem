@@ -29,13 +29,13 @@ export default function LogInForm() {
             localStorage.setItem("token",JSON.stringify(y.data))
             console.log(y.data);
 
-            navi("/Home")
+           
         }).catch(y=>{
 
             console.log(y)
         })
 
-
+        navi("/Home")
       }
 
 

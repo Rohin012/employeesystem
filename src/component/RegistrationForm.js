@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import authFetch from '../axioshandler/interseptor';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
+  const navi = useNavigate();
 
   const[form,setForm]=useState({
     title:"",
@@ -18,7 +20,8 @@ const RegistrationForm = () => {
   })
 
   const handleInput = (e)=>{
-      if(e.target.type=="checkbox"){
+    
+      if(e.target.type==="checkbox"){
 
         setForm({...form,[e.target.name]:e.target.checked}) 
       }
@@ -30,18 +33,23 @@ const RegistrationForm = () => {
 
   }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e)=>{
 
     e.preventDefault();
     console.log(form);
+
+    authFetch.post("accounts/register",form)
+    .then(y=>{
+      console.log(y)
+    }).catch(y=>{
+
+      console.log(y);
+    })
+
+    navi("/LogIn")
+
   }
 
-  authFetch.post("accounts/register",form)
-  .then(y=>{
-    console.log(y)
-  }).catch(y=>{
-    console.log(y)
-  })
 
   return (
     <Form onSubmit={handleSubmit}>
