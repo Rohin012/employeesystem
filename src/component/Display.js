@@ -5,13 +5,17 @@ import Table from 'react-bootstrap/Table';
 const Display = () => {
     const [data,setData]= useState([]);
 
-    
+    const [isloadded,setIsLoadded] = useState(false);
 
     useEffect(()=>{
+
+        setIsLoadded(true);
 
       authFetch.get("/accounts").then(y=> {
         
             setData(y.data)
+            setIsLoadded(false)
+
         }).catch(u=>{
 
             console.log(u);
@@ -19,6 +23,13 @@ const Display = () => {
 
     },[])
   return (
+    <>
+    {isloadded ?(
+         <div className="d-flex justify-content-center align-items-center">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>):(
     <Table striped bordered hover>
     <thead>
       <tr>
@@ -51,9 +62,9 @@ const Display = () => {
         }
         
         </tbody>
-        </Table>
+        </Table>)}
 
-  
+        </>
   )
 }
 
