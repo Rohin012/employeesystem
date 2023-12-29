@@ -6,9 +6,10 @@ import Registration from './pages/Registration';
 import ApplicationNav from './component/ApplicationNav';
 import LogIn from './pages/LogIn';
 import Home from './pages/Home';
+import TableGrid from './pages/TableGrid';
 function App() {
   return (
-    <Container>
+<>
 
     <ApplicationNav/>
     <Routes>
@@ -16,10 +17,11 @@ function App() {
       <Route path='/' element={<Registration></Registration>}/>
       <Route path='/LogIn' element={<LogIn></LogIn>}/>
       <Route path='/Home' element={<Home></Home>}/>
+      <Route path='/TableGrid' element={<TableGrid></TableGrid>}/>
 
     </Routes>
-
-    </Container>
+</>
+   
   );
 }
 

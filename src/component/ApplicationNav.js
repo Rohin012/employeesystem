@@ -16,6 +16,8 @@ export default function ApplicationNav() {
         <Nav.Link as={Link}to="/Home">Home</Nav.Link>
         <Nav.Link as={Link}to="/">Registration</Nav.Link>
         <Nav.Link as={Link}to="/LogIn">LogIn</Nav.Link>
+        <Nav.Link as={Link}to="/TableGrid">TableGrid</Nav.Link>
+        
       </Nav>
     </Container>
   </Navbar>
